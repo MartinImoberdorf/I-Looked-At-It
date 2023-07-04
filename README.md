@@ -1,18 +1,8 @@
 # I-Looked-At-It
 
+This program was created with the purpose of providing a database where it allows to record all the series and movies seen by a person.
 
-
-🟧 This program was created with the purpose of providing a database where it allows to record all the series and movies seen by a person.
-
-
-
-
-
-
-
-
-
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 MIT License
 
