@@ -4,10 +4,10 @@ from tkinter import messagebox
 from datetime import date
 import sqlite3
 import time
-
+import os
 
 def Crear_BBDD():
-    conexion=sqlite3.connect('BBDD')
+    conexion=sqlite3.connect('BBDD.db')
     cursor=conexion.cursor()
 
     try:
@@ -33,7 +33,7 @@ def Registrar():
         horaIngreso=time.strftime('%H:%M:%S', time.localtime())
         diaIngreso=date.today()
 
-        conexion=sqlite3.connect('BBDD')
+        conexion=sqlite3.connect('BBDD.db')
 
         cursor=conexion.cursor()
   
@@ -57,7 +57,7 @@ def Registrar():
         conexion.close() 
 
 def verificar():
-    conexion=sqlite3.connect('BBDD')
+    conexion=sqlite3.connect('BBDD.db')
     cursor=conexion.cursor()
 
     titulo=tituloEntry.get()
@@ -93,10 +93,10 @@ def main():
     root.configure(background="black")
     root.title("")
     root.resizable(width=False,height=False)
-    root.iconbitmap('Imgs/Logo.ico')
+    root.iconbitmap(os.path.join(os.path.dirname(__file__), 'Imgs', 'Logo.ico'))
 
     global botonNuevo1
-    img = PhotoImage(file='Imgs/LogoMain.png')
+    img = PhotoImage(file=os.path.join(os.path.dirname(__file__), 'Imgs', 'LogoMain.png'))
     botonNuevo1 = Button(text="test",image=img,bg="yellow",command=ocultarBoton)
     botonNuevo1.pack(expand=True)
     botonNuevo1.config(bg="black",activebackground="black",activeforeground="black",highlightbackground="black")
